@@ -195,7 +195,7 @@ async function publicarInstagram() {
         console.log('✅ Imagen subida:', IMAGE_URL);
 
         const createMediaRes = await axios.post(
-            `https://graph.facebook.com/v25.0/${IG_USER_ID}/media`,
+            `https://graph.instagram.com/v25.0/${IG_USER_ID}/media`,
             null,
             {
                 params: {
@@ -229,7 +229,7 @@ Real: Compra $${cotizaciones.real_buy} / Venta $${cotizaciones.real_sell}
             await delay(3000);
 
             const statusRes = await axios.get(
-                `https://graph.facebook.com/${mediaId}`,
+                `https://graph.instagram.com/${mediaId}`,
                 {
                     params: {
                         fields: 'status_code',
@@ -248,7 +248,7 @@ Real: Compra $${cotizaciones.real_buy} / Venta $${cotizaciones.real_sell}
         }
 
         const publishRes = await axios.post(
-            `https://graph.facebook.com/v25.0/${IG_USER_ID}/media_publish`,
+            `https://graph.instagram.com/v25.0/${IG_USER_ID}/media_publish`,
             null,
             {
                 params: {
